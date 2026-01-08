@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>郊區黑手黨 OutskirtsMafia | NK all the way up💦</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
     <style>
         * {
             margin: 0;
@@ -13,9 +14,23 @@
 
         body {
             font-family: 'Arial', 'Microsoft JhengHei', sans-serif;
-            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+            background: #0a0a0a;
             color: #f0f0f0;
             overflow-x: hidden;
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('images/888999.JPG') center/cover no-repeat fixed;
+            opacity: 0.08;
+            z-index: -1;
+            filter: blur(3px);
         }
 
         header {
@@ -34,47 +49,24 @@
             max-width: 1200px;
             margin: 0 auto;
             display: flex;
-            justify-content: space-between;
+            justify-content: center;
             align-items: center;
             padding: 0 20px;
         }
 
-        .logo-container {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-
-        .logo-img {
-            height: 60px;
-            width: auto;
-            filter: drop-shadow(0 0 10px rgba(255, 102, 0, 0.5));
-            transition: transform 0.3s;
-        }
-
-        .logo-img:hover {
-            transform: scale(1.1);
-        }
-
-        .logo-text {
-            font-size: 24px;
-            font-weight: bold;
-            color: #ff6600;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-        }
-
         .nav-links {
             display: flex;
-            gap: 30px;
+            gap: 40px;
             align-items: center;
         }
 
         .nav-links a {
             color: #f0f0f0;
             text-decoration: none;
-            font-size: 16px;
+            font-size: 18px;
             transition: color 0.3s;
             position: relative;
+            font-weight: 500;
         }
 
         .nav-links a:hover {
@@ -97,16 +89,14 @@
         }
 
         .hero {
-            height: 100vh;
+            min-height: 100vh;
             display: flex;
+            flex-direction: column;
             align-items: center;
             justify-content: center;
             text-align: center;
             position: relative;
-            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
-                        radial-gradient(circle at 20% 50%, rgba(255, 102, 0, 0.1) 0%, transparent 50%),
-                        radial-gradient(circle at 80% 50%, rgba(255, 102, 0, 0.1) 0%, transparent 50%),
-                        #000;
+            padding: 120px 20px 80px;
         }
 
         .hero::before {
@@ -116,55 +106,52 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: repeating-linear-gradient(
-                0deg,
-                transparent,
-                transparent 2px,
-                rgba(255, 102, 0, 0.03) 2px,
-                rgba(255, 102, 0, 0.03) 4px
-            );
+            background: radial-gradient(circle at 30% 50%, rgba(255, 102, 0, 0.15) 0%, transparent 60%),
+                        radial-gradient(circle at 70% 50%, rgba(255, 102, 0, 0.15) 0%, transparent 60%);
             pointer-events: none;
+        }
+
+        .logo-main {
+            width: 400px;
+            max-width: 80vw;
+            height: auto;
+            margin-bottom: 40px;
+            filter: drop-shadow(0 0 30px rgba(255, 102, 0, 0.6));
+            position: relative;
+            z-index: 1;
+        }
+
+        .brand-name {
+            font-size: 32px;
+            color: #ff6600;
+            margin-bottom: 20px;
+            text-shadow: 0 0 20px rgba(255, 102, 0, 0.5);
+            letter-spacing: 2px;
         }
 
         .hero-content {
             position: relative;
             z-index: 1;
-        }
-
-        .hero-content h1 {
-            font-size: 72px;
-            margin-bottom: 20px;
-            color: #ff6600;
-            text-shadow: 0 0 20px rgba(255, 102, 0, 0.5), 3px 3px 6px rgba(0, 0, 0, 0.8);
-            animation: fadeInUp 1s ease;
-        }
-
-        .hero-content .subtitle {
-            font-size: 32px;
-            margin-bottom: 10px;
-            color: #fff;
-            opacity: 0.9;
-            animation: fadeInUp 1s ease 0.2s backwards;
+            margin-top: 20px;
         }
 
         .hero-content p {
-            font-size: 24px;
+            font-size: 28px;
             margin-bottom: 40px;
-            opacity: 0.8;
-            animation: fadeInUp 1s ease 0.4s backwards;
+            opacity: 0.9;
+            text-shadow: 0 0 10px rgba(255, 102, 0, 0.3);
         }
 
         .cta-button {
             display: inline-block;
-            padding: 15px 40px;
+            padding: 18px 50px;
             background: linear-gradient(135deg, #ff6600 0%, #ff8800 100%);
             color: #000;
             text-decoration: none;
-            font-size: 18px;
+            font-size: 20px;
             font-weight: bold;
             border-radius: 50px;
             transition: transform 0.3s, box-shadow 0.3s;
-            animation: fadeInUp 1s ease 0.6s backwards;
             box-shadow: 0 4px 15px rgba(255, 102, 0, 0.4);
         }
 
@@ -177,6 +164,7 @@
             max-width: 1200px;
             margin: 0 auto;
             padding: 80px 20px;
+            position: relative;
         }
 
         .section-title {
@@ -333,33 +321,25 @@
             transform: translateY(-2px);
         }
 
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
         @media (max-width: 768px) {
-            .hero-content h1 {
-                font-size: 42px;
+            .logo-main {
+                width: 300px;
             }
 
-            .hero-content .subtitle {
+            .brand-name {
                 font-size: 24px;
             }
 
             .hero-content p {
-                font-size: 18px;
+                font-size: 20px;
             }
 
             .nav-links {
-                flex-direction: column;
-                gap: 15px;
+                gap: 20px;
+            }
+
+            .nav-links a {
+                font-size: 16px;
             }
 
             .about {
@@ -369,24 +349,12 @@
             .about-content {
                 grid-template-columns: 1fr;
             }
-
-            .logo-img {
-                height: 45px;
-            }
-
-            .logo-text {
-                font-size: 18px;
-            }
         }
     </style>
 </head>
 <body>
     <header>
         <nav>
-            <div class="logo-container">
-                <img src="images/logo.jpg" alt="OutskirtsMafia Logo" class="logo-img" onerror="this.style.display='none'">
-                <div class="logo-text">OutskirtsMafia</div>
-            </div>
             <div class="nav-links">
                 <a href="#home">首頁</a>
                 <a href="#social">社群</a>
@@ -396,33 +364,53 @@
     </header>
 
     <section id="home" class="hero">
+        <img src="images/logo.jpg" alt="OutskirtsMafia Logo" class="logo-main" 
+             data-aos="zoom-in" 
+             data-aos-duration="1200" 
+             data-aos-delay="200">
+        
+        <div class="brand-name" 
+             data-aos="fade-up" 
+             data-aos-duration="1000" 
+             data-aos-delay="600">
+            郊區黑手黨 OutskirtsMafia
+        </div>
+        
         <div class="hero-content">
-            <h1>郊區黑手黨</h1>
-            <div class="subtitle">OutskirtsMafia</div>
-            <p>NK all the way up💦</p>
-            <a href="#about" class="cta-button">探索更多</a>
+            <p data-aos="fade-up" 
+               data-aos-duration="1000" 
+               data-aos-delay="900">
+                NK all the way up💦
+            </p>
+            <a href="#about" 
+               class="cta-button" 
+               data-aos="fade-up" 
+               data-aos-duration="1000" 
+               data-aos-delay="1200">
+                探索更多
+            </a>
         </div>
     </section>
 
     <section id="social">
-        <h2 class="section-title">追蹤我們</h2>
+        <h2 class="section-title" data-aos="fade-down">追蹤我們</h2>
         <div class="social-grid">
-            <div class="social-card">
+            <div class="social-card" data-aos="flip-left" data-aos-delay="100">
                 <span class="social-icon">🎵</span>
                 <h3>YouTube</h3>
                 <a href="https://youtube.com/@outskirtsmafia?si=EiBgBLXmsQPRR2m4" target="_blank">@outskirtsmafia</a>
             </div>
-            <div class="social-card">
+            <div class="social-card" data-aos="flip-left" data-aos-delay="200">
                 <span class="social-icon">🎧</span>
                 <h3>Spotify</h3>
                 <a href="https://open.spotify.com/artist/4H1jM71I2ky87r2Aytr96z?si=3nDrg0AvSPqDalodYT8pYQ" target="_blank">聆聽音樂</a>
             </div>
-            <div class="social-card">
+            <div class="social-card" data-aos="flip-left" data-aos-delay="300">
                 <span class="social-icon">📸</span>
                 <h3>Instagram</h3>
                 <a href="https://www.instagram.com/outskirtsmafia?igsh=amt6aXVnbmgxaXVv" target="_blank">@outskirtsmafia</a>
             </div>
-            <div class="social-card">
+            <div class="social-card" data-aos="flip-left" data-aos-delay="400">
                 <span class="social-icon">🎤</span>
                 <h3>StreetVoice</h3>
                 <a href="https://streetvoice.com/outskirtsmafia/" target="_blank">街聲頁面</a>
@@ -431,18 +419,18 @@
     </section>
 
     <section id="about">
-        <div class="about">
+        <div class="about" data-aos="fade-up">
             <div class="about-content">
-                <div class="about-text">
+                <div class="about-text" data-aos="fade-right" data-aos-delay="200">
                     <h2>關於我們</h2>
                     <p>這是來自台北南港的郊區黑手黨 OutskirtsMafia</p>
                     <p>我們在城市的邊緣創造屬於我們的聲音，用音樂訴說郊區的故事。從南港出發，將最真實的街頭文化帶給每一個人。</p>
                     <div class="location">📍 台北南港 NK all the way up💦</div>
                 </div>
-                <div class="about-images">
-                    <img src="images/77888.png" alt="OutskirtsMafia" class="about-img large" onerror="this.style.display='none'">
-                    <img src="images/778888.png" alt="OutskirtsMafia" class="about-img" onerror="this.style.display='none'">
-                    <img src="images/888999.JPG" alt="OutskirtsMafia" class="about-img" onerror="this.style.display='none'">
+                <div class="about-images" data-aos="fade-left" data-aos-delay="400">
+                    <img src="images/77888.png" alt="OutskirtsMafia" class="about-img large">
+                    <img src="images/778888.png" alt="OutskirtsMafia" class="about-img">
+                    <img src="images/778888.png" alt="OutskirtsMafia" class="about-img">
                 </div>
             </div>
         </div>
@@ -459,7 +447,15 @@
         </div>
     </footer>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
     <script>
+        // 初始化 AOS 動畫庫
+        AOS.init({
+            duration: 1000,
+            once: false,
+            mirror: true
+        });
+
         // 平滑滾動效果
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
@@ -472,28 +468,6 @@
                     });
                 }
             });
-        });
-
-        // 滾動動畫
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -100px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, observerOptions);
-
-        document.querySelectorAll('.social-card').forEach(card => {
-            card.style.opacity = '0';
-            card.style.transform = 'translateY(30px)';
-            card.style.transition = 'opacity 0.6s, transform 0.6s';
-            observer.observe(card);
         });
     </script>
 </body>
