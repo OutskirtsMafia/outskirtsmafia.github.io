@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>郊區黑手黨 | OutskirtsMafia</title>
+    <title>郊區黑手黨 OutskirtsMafia | NK all the way up💦</title>
     <style>
         * {
             margin: 0;
@@ -12,21 +12,22 @@
         }
 
         body {
-            font-family: 'Arial', sans-serif;
-            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            font-family: 'Arial', 'Microsoft JhengHei', sans-serif;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
             color: #f0f0f0;
             overflow-x: hidden;
         }
 
         header {
-            background: rgba(0, 0, 0, 0.8);
-            padding: 20px 0;
+            background: rgba(0, 0, 0, 0.95);
+            padding: 15px 0;
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;
             backdrop-filter: blur(10px);
-            border-bottom: 2px solid #b8860b;
+            border-bottom: 3px solid #ff6600;
+            box-shadow: 0 4px 20px rgba(255, 102, 0, 0.3);
         }
 
         nav {
@@ -38,16 +39,34 @@
             padding: 0 20px;
         }
 
-        .logo {
-            font-size: 28px;
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo-img {
+            height: 60px;
+            width: auto;
+            filter: drop-shadow(0 0 10px rgba(255, 102, 0, 0.5));
+            transition: transform 0.3s;
+        }
+
+        .logo-img:hover {
+            transform: scale(1.1);
+        }
+
+        .logo-text {
+            font-size: 24px;
             font-weight: bold;
-            color: #d4af37;
+            color: #ff6600;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
         }
 
         .nav-links {
             display: flex;
             gap: 30px;
+            align-items: center;
         }
 
         .nav-links a {
@@ -59,7 +78,7 @@
         }
 
         .nav-links a:hover {
-            color: #d4af37;
+            color: #ff6600;
         }
 
         .nav-links a::after {
@@ -69,7 +88,7 @@
             height: 2px;
             bottom: -5px;
             left: 0;
-            background: #d4af37;
+            background: #ff6600;
             transition: width 0.3s;
         }
 
@@ -84,31 +103,61 @@
             justify-content: center;
             text-align: center;
             position: relative;
-            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
-                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800"><rect fill="%23000" width="1200" height="800"/><circle cx="200" cy="200" r="3" fill="%23333"/><circle cx="600" cy="400" r="3" fill="%23333"/><circle cx="1000" cy="600" r="3" fill="%23333"/></svg>');
-            background-size: cover;
-            background-position: center;
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                        radial-gradient(circle at 20% 50%, rgba(255, 102, 0, 0.1) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 50%, rgba(255, 102, 0, 0.1) 0%, transparent 50%),
+                        #000;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: repeating-linear-gradient(
+                0deg,
+                transparent,
+                transparent 2px,
+                rgba(255, 102, 0, 0.03) 2px,
+                rgba(255, 102, 0, 0.03) 4px
+            );
+            pointer-events: none;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
         }
 
         .hero-content h1 {
-            font-size: 64px;
+            font-size: 72px;
             margin-bottom: 20px;
-            color: #d4af37;
-            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8);
+            color: #ff6600;
+            text-shadow: 0 0 20px rgba(255, 102, 0, 0.5), 3px 3px 6px rgba(0, 0, 0, 0.8);
             animation: fadeInUp 1s ease;
+        }
+
+        .hero-content .subtitle {
+            font-size: 32px;
+            margin-bottom: 10px;
+            color: #fff;
+            opacity: 0.9;
+            animation: fadeInUp 1s ease 0.2s backwards;
         }
 
         .hero-content p {
             font-size: 24px;
             margin-bottom: 40px;
-            opacity: 0.9;
-            animation: fadeInUp 1s ease 0.3s backwards;
+            opacity: 0.8;
+            animation: fadeInUp 1s ease 0.4s backwards;
         }
 
         .cta-button {
             display: inline-block;
             padding: 15px 40px;
-            background: linear-gradient(135deg, #d4af37 0%, #b8860b 100%);
+            background: linear-gradient(135deg, #ff6600 0%, #ff8800 100%);
             color: #000;
             text-decoration: none;
             font-size: 18px;
@@ -116,11 +165,12 @@
             border-radius: 50px;
             transition: transform 0.3s, box-shadow 0.3s;
             animation: fadeInUp 1s ease 0.6s backwards;
+            box-shadow: 0 4px 15px rgba(255, 102, 0, 0.4);
         }
 
         .cta-button:hover {
             transform: translateY(-3px);
-            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.4);
+            box-shadow: 0 10px 30px rgba(255, 102, 0, 0.6);
         }
 
         section {
@@ -130,95 +180,157 @@
         }
 
         .section-title {
-            font-size: 42px;
+            font-size: 48px;
             text-align: center;
-            margin-bottom: 60px;
-            color: #d4af37;
+            margin-bottom: 20px;
+            color: #ff6600;
             position: relative;
+            text-shadow: 0 0 10px rgba(255, 102, 0, 0.3);
         }
 
         .section-title::after {
             content: '';
             display: block;
             width: 100px;
-            height: 3px;
-            background: #d4af37;
+            height: 4px;
+            background: linear-gradient(90deg, transparent, #ff6600, transparent);
             margin: 20px auto 0;
         }
 
-        .features {
+        .social-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 40px;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 60px;
         }
 
-        .feature-card {
-            background: rgba(255, 255, 255, 0.05);
+        .social-card {
+            background: linear-gradient(135deg, rgba(255, 102, 0, 0.1) 0%, rgba(0, 0, 0, 0.5) 100%);
             padding: 40px;
             border-radius: 15px;
-            border: 1px solid rgba(212, 175, 55, 0.3);
-            transition: transform 0.3s, box-shadow 0.3s;
-            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 102, 0, 0.3);
+            transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+            text-align: center;
         }
 
-        .feature-card:hover {
+        .social-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 15px 40px rgba(212, 175, 55, 0.2);
+            box-shadow: 0 15px 40px rgba(255, 102, 0, 0.3);
+            border-color: #ff6600;
         }
 
-        .feature-icon {
+        .social-icon {
             font-size: 48px;
             margin-bottom: 20px;
+            display: block;
         }
 
-        .feature-card h3 {
+        .social-card h3 {
             font-size: 24px;
             margin-bottom: 15px;
-            color: #d4af37;
+            color: #ff6600;
         }
 
-        .feature-card p {
-            line-height: 1.6;
-            opacity: 0.9;
+        .social-card a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 16px;
+            transition: color 0.3s;
+        }
+
+        .social-card a:hover {
+            color: #ff6600;
         }
 
         .about {
-            background: rgba(0, 0, 0, 0.3);
-            border-radius: 15px;
+            background: linear-gradient(135deg, rgba(255, 102, 0, 0.05) 0%, rgba(0, 0, 0, 0.5) 100%);
+            border-radius: 20px;
             padding: 60px;
             margin: 80px 0;
+            border: 2px solid rgba(255, 102, 0, 0.2);
+            box-shadow: 0 10px 40px rgba(255, 102, 0, 0.1);
         }
 
-        .about p {
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .about-text h2 {
+            font-size: 42px;
+            margin-bottom: 30px;
+            color: #ff6600;
+        }
+
+        .about-text p {
             font-size: 18px;
             line-height: 1.8;
             margin-bottom: 20px;
             opacity: 0.9;
         }
 
+        .about-text .location {
+            font-size: 24px;
+            font-weight: bold;
+            color: #ff6600;
+            margin-top: 30px;
+            text-shadow: 0 0 10px rgba(255, 102, 0, 0.3);
+        }
+
+        .about-images {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .about-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+            border: 2px solid rgba(255, 102, 0, 0.3);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .about-img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 30px rgba(255, 102, 0, 0.4);
+            border-color: #ff6600;
+        }
+
+        .about-img.large {
+            grid-column: 1 / -1;
+            height: 300px;
+        }
+
         footer {
-            background: rgba(0, 0, 0, 0.8);
+            background: rgba(0, 0, 0, 0.95);
             padding: 40px 20px;
             text-align: center;
-            border-top: 2px solid #b8860b;
+            border-top: 3px solid #ff6600;
         }
 
-        .social-links {
+        .footer-links {
             display: flex;
-            gap: 20px;
+            gap: 30px;
             justify-content: center;
             margin-top: 20px;
+            flex-wrap: wrap;
         }
 
-        .social-links a {
-            color: #d4af37;
+        .footer-links a {
+            color: #ff6600;
             text-decoration: none;
             font-size: 18px;
-            transition: color 0.3s;
+            transition: color 0.3s, transform 0.3s;
+            display: inline-block;
         }
 
-        .social-links a:hover {
+        .footer-links a:hover {
             color: #fff;
+            transform: translateY(-2px);
         }
 
         @keyframes fadeInUp {
@@ -237,6 +349,10 @@
                 font-size: 42px;
             }
 
+            .hero-content .subtitle {
+                font-size: 24px;
+            }
+
             .hero-content p {
                 font-size: 18px;
             }
@@ -249,18 +365,32 @@
             .about {
                 padding: 30px;
             }
+
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+
+            .logo-img {
+                height: 45px;
+            }
+
+            .logo-text {
+                font-size: 18px;
+            }
         }
     </style>
 </head>
 <body>
     <header>
         <nav>
-            <div class="logo">🎩 OutskirtsMafia</div>
+            <div class="logo-container">
+                <img src="images/logo.jpg" alt="OutskirtsMafia Logo" class="logo-img" onerror="this.style.display='none'">
+                <div class="logo-text">OutskirtsMafia</div>
+            </div>
             <div class="nav-links">
                 <a href="#home">首頁</a>
-                <a href="#features">特色</a>
+                <a href="#social">社群</a>
                 <a href="#about">關於</a>
-                <a href="#contact">聯絡</a>
             </div>
         </nav>
     </header>
@@ -268,69 +398,64 @@
     <section id="home" class="hero">
         <div class="hero-content">
             <h1>郊區黑手黨</h1>
-            <p>在城市邊緣，規則由我們制定</p>
-            <a href="#features" class="cta-button">探索更多</a>
+            <div class="subtitle">OutskirtsMafia</div>
+            <p>NK all the way up💦</p>
+            <a href="#about" class="cta-button">探索更多</a>
         </div>
     </section>
 
-    <section id="features">
-        <h2 class="section-title">我們的特色</h2>
-        <div class="features">
-            <div class="feature-card">
-                <div class="feature-icon">💼</div>
-                <h3>專業團隊</h3>
-                <p>經驗豐富的成員組成，每個人都在各自領域擁有專業技能，確保任務完美執行。</p>
+    <section id="social">
+        <h2 class="section-title">追蹤我們</h2>
+        <div class="social-grid">
+            <div class="social-card">
+                <span class="social-icon">🎵</span>
+                <h3>YouTube</h3>
+                <a href="https://youtube.com/@outskirtsmafia?si=EiBgBLXmsQPRR2m4" target="_blank">@outskirtsmafia</a>
             </div>
-            <div class="feature-card">
-                <div class="feature-icon">🗝️</div>
-                <h3>絕對保密</h3>
-                <p>我們重視每位成員的隱私與安全，採用最高級別的保密措施保護所有資訊。</p>
+            <div class="social-card">
+                <span class="social-icon">🎧</span>
+                <h3>Spotify</h3>
+                <a href="https://open.spotify.com/artist/4H1jM71I2ky87r2Aytr96z?si=3nDrg0AvSPqDalodYT8pYQ" target="_blank">聆聽音樂</a>
             </div>
-            <div class="feature-card">
-                <div class="feature-icon">🎯</div>
-                <h3>精準執行</h3>
-                <p>從計畫到執行，每個細節都經過精心策劃，確保達到預期目標。</p>
+            <div class="social-card">
+                <span class="social-icon">📸</span>
+                <h3>Instagram</h3>
+                <a href="https://www.instagram.com/outskirtsmafia?igsh=amt6aXVnbmgxaXVv" target="_blank">@outskirtsmafia</a>
             </div>
-            <div class="feature-card">
-                <div class="feature-icon">🤝</div>
-                <h3>忠誠至上</h3>
-                <p>家族成員之間的信任與忠誠是我們最重要的價值觀，一旦加入永遠是家人。</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">💰</div>
-                <h3>利益共享</h3>
-                <p>公平的利益分配機制，確保每位貢獻者都能獲得應有的回報。</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">🛡️</div>
-                <h3>全面保護</h3>
-                <p>為每位成員提供全方位的安全保障，讓你在組織中無後顧之憂。</p>
+            <div class="social-card">
+                <span class="social-icon">🎤</span>
+                <h3>StreetVoice</h3>
+                <a href="https://streetvoice.com/outskirtsmafia/" target="_blank">街聲頁面</a>
             </div>
         </div>
     </section>
 
     <section id="about">
         <div class="about">
-            <h2 class="section-title">關於我們</h2>
-            <p>郊區黑手黨（OutskirtsMafia）是一個建立在信任、忠誠與專業基礎上的組織。我們在城市的邊緣建立了自己的規則與秩序。</p>
-            <p>我們不僅僅是一個組織，更是一個緊密團結的家族。每位成員都經過嚴格篩選，確保擁有共同的價值觀與目標。</p>
-            <p>在這裡，你將找到志同道合的夥伴，一起在這個充滿挑戰的世界中開創屬於我們的道路。</p>
-        </div>
-    </section>
-
-    <section id="contact">
-        <h2 class="section-title">加入我們</h2>
-        <div style="text-align: center; padding: 40px;">
-            <p style="font-size: 20px; margin-bottom: 30px;">準備好成為家族的一員了嗎？</p>
-            <a href="https://github.com/outskirtsmafia/outskirtsmafia.github.io" class="cta-button" target="_blank">訪問 GitHub</a>
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>關於我們</h2>
+                    <p>這是來自台北南港的郊區黑手黨 OutskirtsMafia</p>
+                    <p>我們在城市的邊緣創造屬於我們的聲音，用音樂訴說郊區的故事。從南港出發，將最真實的街頭文化帶給每一個人。</p>
+                    <div class="location">📍 台北南港 NK all the way up💦</div>
+                </div>
+                <div class="about-images">
+                    <img src="images/77888.png" alt="OutskirtsMafia" class="about-img large" onerror="this.style.display='none'">
+                    <img src="images/778888.png" alt="OutskirtsMafia" class="about-img" onerror="this.style.display='none'">
+                    <img src="images/888999.JPG" alt="OutskirtsMafia" class="about-img" onerror="this.style.display='none'">
+                </div>
+            </div>
         </div>
     </section>
 
     <footer>
-        <p>&copy; 2024 OutskirtsMafia. 保留所有權利。</p>
-        <div class="social-links">
+        <p>&copy; 2024 OutskirtsMafia. NK all the way up💦</p>
+        <div class="footer-links">
+            <a href="https://youtube.com/@outskirtsmafia?si=EiBgBLXmsQPRR2m4" target="_blank">YouTube</a>
+            <a href="https://open.spotify.com/artist/4H1jM71I2ky87r2Aytr96z?si=3nDrg0AvSPqDalodYT8pYQ" target="_blank">Spotify</a>
+            <a href="https://www.instagram.com/outskirtsmafia?igsh=amt6aXVnbmgxaXVv" target="_blank">Instagram</a>
+            <a href="https://streetvoice.com/outskirtsmafia/" target="_blank">StreetVoice</a>
             <a href="https://github.com/outskirtsmafia/outskirtsmafia.github.io" target="_blank">GitHub</a>
-            <a href="https://outskirtsmafia.github.io" target="_blank">官方網站</a>
         </div>
     </footer>
 
@@ -349,7 +474,7 @@
             });
         });
 
-        // 滾動時添加動畫效果
+        // 滾動動畫
         const observerOptions = {
             threshold: 0.1,
             rootMargin: '0px 0px -100px 0px'
@@ -364,7 +489,7 @@
             });
         }, observerOptions);
 
-        document.querySelectorAll('.feature-card').forEach(card => {
+        document.querySelectorAll('.social-card').forEach(card => {
             card.style.opacity = '0';
             card.style.transform = 'translateY(30px)';
             card.style.transition = 'opacity 0.6s, transform 0.6s';
