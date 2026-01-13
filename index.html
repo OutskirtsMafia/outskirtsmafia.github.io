@@ -35,11 +35,11 @@
             top: 0;
             left: 0;
             width: 100%;
-            height: 100%;
-            background: url('images/888999.JPG') center/cover no-repeat fixed;
-            opacity: 0.08;
+            height: 50%;
+            background: url('images/9898.JPG') center top/cover no-repeat fixed;
+            opacity: 0.15;
             z-index: -1;
-            filter: blur(3px);
+            filter: blur(1px);
         }
 
         header {
@@ -195,48 +195,70 @@
         }
 
         .social-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 40px;
             margin-top: 60px;
+            flex-wrap: wrap;
         }
 
         .social-card {
-            background: linear-gradient(135deg, rgba(255, 102, 0, 0.1) 0%, rgba(0, 0, 0, 0.5) 100%);
-            padding: 40px;
-            border-radius: 15px;
-            border: 2px solid rgba(255, 102, 0, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, rgba(255, 102, 0, 0.2) 0%, rgba(0, 0, 0, 0.6) 100%);
+            border-radius: 50%;
+            border: 3px solid rgba(255, 102, 0, 0.4);
             transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
-            text-align: center;
+            cursor: pointer;
+            text-decoration: none;
         }
 
         .social-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 40px rgba(255, 102, 0, 0.3);
+            transform: translateY(-10px) scale(1.1);
+            box-shadow: 0 15px 40px rgba(255, 102, 0, 0.5);
             border-color: #ff6600;
         }
 
         .social-icon {
-            font-size: 48px;
-            margin-bottom: 20px;
-            display: block;
+            font-size: 36px;
         }
 
-        .social-card h3 {
+        .video-section {
+            max-width: 900px;
+            margin: 60px auto;
+            padding: 40px 20px;
+        }
+
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            border-radius: 15px;
+            border: 3px solid rgba(255, 102, 0, 0.3);
+            box-shadow: 0 10px 40px rgba(255, 102, 0, 0.2);
+            background: #000;
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .video-title {
             font-size: 24px;
-            margin-bottom: 15px;
             color: #ff6600;
-        }
-
-        .social-card a {
-            color: #fff;
-            text-decoration: none;
-            font-size: 16px;
-            transition: color 0.3s;
-        }
-
-        .social-card a:hover {
-            color: #ff6600;
+            text-align: center;
+            margin-bottom: 20px;
+            text-shadow: 0 0 10px rgba(255, 102, 0, 0.3);
         }
 
         .about {
@@ -363,6 +385,15 @@
             .about-content {
                 grid-template-columns: 1fr;
             }
+
+            .social-card {
+                width: 70px;
+                height: 70px;
+            }
+
+            .social-icon {
+                font-size: 30px;
+            }
         }
     </style>
 </head>
@@ -372,6 +403,7 @@
             <div class="nav-links">
                 <a href="#home">首頁</a>
                 <a href="#social">社群</a>
+                <a href="#video">MV</a>
                 <a href="#about">關於</a>
             </div>
         </nav>
@@ -409,25 +441,51 @@
     <section id="social">
         <h2 class="section-title" data-aos="fade-down">追蹤我們</h2>
         <div class="social-grid">
-            <div class="social-card" data-aos="flip-left" data-aos-delay="100">
+            <a href="https://youtube.com/@outskirtsmafia?si=EiBgBLXmsQPRR2m4" 
+               target="_blank" 
+               class="social-card" 
+               data-aos="zoom-in" 
+               data-aos-delay="100"
+               title="YouTube">
                 <span class="social-icon">🎵</span>
-                <h3>YouTube</h3>
-                <a href="https://youtube.com/@outskirtsmafia?si=EiBgBLXmsQPRR2m4" target="_blank">@outskirtsmafia</a>
-            </div>
-            <div class="social-card" data-aos="flip-left" data-aos-delay="200">
+            </a>
+            <a href="https://open.spotify.com/artist/4H1jM71I2ky87r2Aytr96z?si=3nDrg0AvSPqDalodYT8pYQ" 
+               target="_blank" 
+               class="social-card" 
+               data-aos="zoom-in" 
+               data-aos-delay="200"
+               title="Spotify">
                 <span class="social-icon">🎧</span>
-                <h3>Spotify</h3>
-                <a href="https://open.spotify.com/artist/4H1jM71I2ky87r2Aytr96z?si=3nDrg0AvSPqDalodYT8pYQ" target="_blank">聆聽音樂</a>
-            </div>
-            <div class="social-card" data-aos="flip-left" data-aos-delay="300">
+            </a>
+            <a href="https://www.instagram.com/outskirtsmafia?igsh=amt6aXVnbmgxaXVv" 
+               target="_blank" 
+               class="social-card" 
+               data-aos="zoom-in" 
+               data-aos-delay="300"
+               title="Instagram">
                 <span class="social-icon">📸</span>
-                <h3>Instagram</h3>
-                <a href="https://www.instagram.com/outskirtsmafia?igsh=amt6aXVnbmgxaXVv" target="_blank">@outskirtsmafia</a>
-            </div>
-            <div class="social-card" data-aos="flip-left" data-aos-delay="400">
+            </a>
+            <a href="https://streetvoice.com/outskirtsmafia/" 
+               target="_blank" 
+               class="social-card" 
+               data-aos="zoom-in" 
+               data-aos-delay="400"
+               title="StreetVoice">
                 <span class="social-icon">🎤</span>
-                <h3>StreetVoice</h3>
-                <a href="https://streetvoice.com/outskirtsmafia/" target="_blank">街聲頁面</a>
+            </a>
+        </div>
+    </section>
+
+    <section id="video">
+        <div class="video-section" data-aos="fade-up">
+            <h3 class="video-title">MV</h3>
+            <div class="video-container">
+                <iframe 
+                    src="https://www.youtube.com/embed/x8sViqXr0IE" 
+                    title="YouTube video player" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                    allowfullscreen>
+                </iframe>
             </div>
         </div>
     </section>
@@ -464,14 +522,12 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
     <script>
-        // 初始化 AOS 動畫庫
         AOS.init({
             duration: 1000,
             once: false,
             mirror: true
         });
 
-        // 平滑滾動效果
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
