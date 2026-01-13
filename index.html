@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+.about {<!DOCTYPE html>
 <html lang="zh-TW">
 <head>
     <meta charset="UTF-8">
@@ -196,7 +196,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            gap: 40px;
+            gap: 20px;
             margin-top: 60px;
             flex-wrap: wrap;
         }
@@ -273,7 +273,45 @@
             text-shadow: 0 0 10px rgba(255, 102, 0, 0.3);
         }
 
-        .about {
+        .experience-section {
+            max-width: 1200px;
+            margin: 80px auto;
+            padding: 60px 20px;
+            background: linear-gradient(135deg, rgba(255, 102, 0, 0.05) 0%, rgba(0, 0, 0, 0.5) 100%);
+            border-radius: 20px;
+            border: 2px solid rgba(255, 102, 0, 0.2);
+        }
+
+        .experience-title {
+            font-size: 42px;
+            text-align: center;
+            margin-bottom: 40px;
+            color: #ff6600;
+            text-shadow: 0 0 10px rgba(255, 102, 0, 0.3);
+        }
+
+        .experience-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .experience-img {
+            width: 100%;
+            height: auto;
+            border-radius: 15px;
+            border: 3px solid rgba(255, 102, 0, 0.3);
+            box-shadow: 0 10px 30px rgba(255, 102, 0, 0.2);
+        }
+
+        .old-logo {
+            width: 100%;
+            height: auto;
+            border-radius: 15px;
+            border: 3px solid rgba(255, 102, 0, 0.3);
+            box-shadow: 0 10px 30px rgba(255, 102, 0, 0.2);
+        }
             background: linear-gradient(135deg, rgba(255, 102, 0, 0.05) 0%, rgba(0, 0, 0, 0.5) 100%);
             border-radius: 20px;
             padding: 60px;
@@ -398,14 +436,18 @@
                 grid-template-columns: 1fr;
             }
 
+            .social-card {
+                width: 40px;
+                height: 40px;
+                padding: 6px;
+            }
+
             .video-grid {
                 grid-template-columns: 1fr;
             }
 
-            .social-card {
-                width: 70px;
-                height: 70px;
-                padding: 12px;
+            .experience-content {
+                grid-template-columns: 1fr;
             }
         }
     </style>
@@ -423,29 +465,22 @@
     </header>
 
     <section id="home" class="hero">
-        <img src="images/logo.jpg" alt="OutskirtsMafia Logo" class="logo-main" 
+        <img src="images/osmlonglogo.jpg" alt="OutskirtsMafia Logo" class="logo-main" 
              data-aos="zoom-in" 
              data-aos-duration="1200" 
              data-aos-delay="200">
         
-        <div class="brand-name" 
-             data-aos="fade-up" 
-             data-aos-duration="1000" 
-             data-aos-delay="600">
-            郊區黑手黨 OutskirtsMafia
-        </div>
-        
         <div class="hero-content">
             <p data-aos="fade-up" 
                data-aos-duration="1000" 
-               data-aos-delay="900">
+               data-aos-delay="600">
                 NK all the way up💦
             </p>
             <a href="#about" 
                class="cta-button" 
                data-aos="fade-up" 
                data-aos-duration="1000" 
-               data-aos-delay="1200">
+               data-aos-delay="900">
                 探索更多
             </a>
         </div>
@@ -528,6 +563,14 @@
                     <img src="images/8989.JPG" alt="OutskirtsMafia" class="about-img">
                     <img src="images/778888.JPG" alt="OutskirtsMafia" class="about-img medium">
                 </div>
+            </div>
+        </div>
+
+        <div class="experience-section" data-aos="fade-up" data-aos-delay="200">
+            <h3 class="experience-title">團隊經歷</h3>
+            <div class="experience-content">
+                <img src="images/舊事新郊.jpg" alt="舊事新郊" class="experience-img" data-aos="zoom-in" data-aos-delay="300">
+                <img src="images/logo.jpg" alt="OutskirtsMafia Original Logo" class="old-logo" data-aos="zoom-in" data-aos-delay="400">
             </div>
         </div>
     </section>
