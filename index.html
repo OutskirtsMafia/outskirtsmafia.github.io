@@ -1,10 +1,10 @@
-.about {<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="zh-TW">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="google-site-verification" content="u5srl8EJ5pYG5qIp0Z7f5u5XkZv7QI6vl-MHGgJCnJU" />
-    <meta name="description" content="郊區黑手黨OutskirtsMafia - 來自台北南港的饒舌音樂團體，NK all the way up💦。聆聽我們的音樂作品，追蹤我們的社群媒體。">
+    <meta name="description" content="郊區黑手黨OutskirtsMafia - 來自台北南港的饒舌音樂團體,NK all the way up💦。聆聽我們的音樂作品,追蹤我們的社群媒體。">
     <meta name="keywords" content="郊區黑手黨, OutskirtsMafia, 台北饒舌, 南港, NK, 華語嘻哈, 台灣饒舌, 說唱">
     <meta name="author" content="OutskirtsMafia">
     <meta property="og:title" content="郊區黑手黨 OutskirtsMafia | NK all the way up💦">
@@ -196,7 +196,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            gap: 20px;
+            gap: 30px;
             margin-top: 60px;
             flex-wrap: wrap;
         }
@@ -205,24 +205,24 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            width: 80px;
-            height: 80px;
-            background: linear-gradient(135deg, rgba(255, 102, 0, 0.2) 0%, rgba(0, 0, 0, 0.6) 100%);
+            width: 40px;
+            height: 40px;
+            background: transparent;
             border-radius: 50%;
-            border: 3px solid rgba(255, 102, 0, 0.4);
-            transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+            transition: transform 0.3s, filter 0.3s;
             cursor: pointer;
             text-decoration: none;
         }
 
         .social-card:hover {
-            transform: translateY(-10px) scale(1.1);
-            box-shadow: 0 15px 40px rgba(255, 102, 0, 0.5);
-            border-color: #ff6600;
+            transform: translateY(-5px) scale(1.1);
+            filter: drop-shadow(0 0 10px rgba(255, 102, 0, 0.8));
         }
 
-        .social-icon {
-            font-size: 36px;
+        .social-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
         }
 
         .video-section {
@@ -292,26 +292,43 @@
 
         .experience-content {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-            align-items: center;
+            gap: 30px;
+        }
+
+        .experience-item {
+            display: block;
+            width: 100%;
+            border-radius: 15px;
+            overflow: hidden;
+            border: 3px solid rgba(255, 102, 0, 0.3);
+            box-shadow: 0 10px 30px rgba(255, 102, 0, 0.2);
+            transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .experience-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(255, 102, 0, 0.5);
+            border-color: #ff6600;
         }
 
         .experience-img {
             width: 100%;
             height: auto;
-            border-radius: 15px;
-            border: 3px solid rgba(255, 102, 0, 0.3);
-            box-shadow: 0 10px 30px rgba(255, 102, 0, 0.2);
+            display: block;
         }
 
-        .old-logo {
-            width: 100%;
-            height: auto;
-            border-radius: 15px;
-            border: 3px solid rgba(255, 102, 0, 0.3);
-            box-shadow: 0 10px 30px rgba(255, 102, 0, 0.2);
+        .experience-caption {
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.7);
+            text-align: center;
+            font-size: 18px;
+            color: #ff6600;
+            font-weight: bold;
         }
+
+        .about {
             background: linear-gradient(135deg, rgba(255, 102, 0, 0.05) 0%, rgba(0, 0, 0, 0.5) 100%);
             border-radius: 20px;
             padding: 60px;
@@ -379,6 +396,41 @@
             height: 250px;
         }
 
+        .logo-section {
+            max-width: 1200px;
+            margin: 80px auto;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .logo-section-title {
+            font-size: 42px;
+            margin-bottom: 40px;
+            color: #ff6600;
+            text-shadow: 0 0 10px rgba(255, 102, 0, 0.3);
+        }
+
+        .old-logo-container {
+            display: flex;
+            justify-content: center;
+        }
+
+        .old-logo {
+            max-width: 500px;
+            width: 100%;
+            height: auto;
+            border-radius: 15px;
+            border: 3px solid rgba(255, 102, 0, 0.3);
+            box-shadow: 0 10px 30px rgba(255, 102, 0, 0.2);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .old-logo:hover {
+            transform: scale(1.05);
+            box-shadow: 0 15px 40px rgba(255, 102, 0, 0.5);
+            border-color: #ff6600;
+        }
+
         footer {
             background: rgba(0, 0, 0, 0.95);
             padding: 40px 20px;
@@ -437,17 +489,16 @@
             }
 
             .social-card {
-                width: 40px;
-                height: 40px;
-                padding: 6px;
+                width: 35px;
+                height: 35px;
             }
 
             .video-grid {
                 grid-template-columns: 1fr;
             }
 
-            .experience-content {
-                grid-template-columns: 1fr;
+            .old-logo {
+                max-width: 100%;
             }
         }
     </style>
@@ -554,7 +605,7 @@
                 <div class="about-text" data-aos="fade-right" data-aos-delay="200">
                     <h2>關於我們</h2>
                     <p>這是來自台北南港的郊區黑手黨 OutskirtsMafia</p>
-                    <p>我們在城市的邊緣創造屬於我們的聲音，用音樂訴說郊區的故事。從南港出發，將最真實的街頭文化帶給每一個人。</p>
+                    <p>我們在城市的邊緣創造屬於我們的聲音,用音樂訴說郊區的故事。從南港出發,將最真實的街頭文化帶給每一個人。</p>
                     <div class="location">📍 台北南港 NK all the way up💦</div>
                 </div>
                 <div class="about-images" data-aos="fade-left" data-aos-delay="400">
@@ -569,7 +620,38 @@
         <div class="experience-section" data-aos="fade-up" data-aos-delay="200">
             <h3 class="experience-title">團隊經歷</h3>
             <div class="experience-content">
-                <img src="images/舊事新郊.jpg" alt="舊事新郊" class="experience-img" data-aos="zoom-in" data-aos-delay="300">
+                <a href="https://www.instagram.com/p/C2zslpFJPot/?igsh=MTZ2cmZoNG9qYjI4ZQ==" 
+                   target="_blank" 
+                   class="experience-item" 
+                   data-aos="zoom-in" 
+                   data-aos-delay="300">
+                    <img src="images/舊事新郊.jpg" alt="《舊識新郊》專場" class="experience-img">
+                    <div class="experience-caption">《舊識新郊》專場</div>
+                </a>
+                
+                <a href="https://www.instagram.com/p/DFsMgVBhvFF/?igsh=ZzNteW9sa2NweHVw" 
+                   target="_blank" 
+                   class="experience-item" 
+                   data-aos="zoom-in" 
+                   data-aos-delay="400">
+                    <img src="images/樂擊.jpg" alt="樂擊音樂創作班 特別嘉賓" class="experience-img">
+                    <div class="experience-caption">樂擊音樂創作班 特別嘉賓</div>
+                </a>
+                
+                <a href="https://www.instagram.com/p/DShqolJiUSP/?img_index=1&igsh=ZnR0cjM0NWpodHps" 
+                   target="_blank" 
+                   class="experience-item" 
+                   data-aos="zoom-in" 
+                   data-aos-delay="500">
+                    <img src="images/如夢.jpg" alt="如夢 × 錄客音樂 × 叢零音樂｜在地嘻哈扶植計畫 特別篇" class="experience-img">
+                    <div class="experience-caption">如夢 × 錄客音樂 × 叢零音樂｜在地嘻哈扶植計畫 特別篇</div>
+                </a>
+            </div>
+        </div>
+
+        <div class="logo-section" data-aos="fade-up" data-aos-delay="300">
+            <h3 class="logo-section-title">原始標誌</h3>
+            <div class="old-logo-container">
                 <img src="images/logo.jpg" alt="OutskirtsMafia Original Logo" class="old-logo" data-aos="zoom-in" data-aos-delay="400">
             </div>
         </div>
