@@ -292,6 +292,7 @@
 
         .experience-content {
             display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
         }
 
@@ -315,7 +316,8 @@
 
         .experience-img {
             width: 100%;
-            height: auto;
+            height: 250px;
+            object-fit: cover;
             display: block;
         }
 
@@ -408,6 +410,51 @@
             margin-bottom: 40px;
             color: #ff6600;
             text-shadow: 0 0 10px rgba(255, 102, 0, 0.3);
+        }
+
+        .about-img {
+            cursor: pointer;
+        }
+
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            z-index: 9999;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .lightbox.active {
+            display: flex;
+        }
+
+        .lightbox-content {
+            max-width: 90%;
+            max-height: 90%;
+            object-fit: contain;
+            border-radius: 10px;
+            box-shadow: 0 0 50px rgba(255, 102, 0, 0.5);
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 30px;
+            right: 30px;
+            font-size: 40px;
+            color: #ff6600;
+            cursor: pointer;
+            z-index: 10000;
+            transition: transform 0.3s;
+        }
+
+        .lightbox-close:hover {
+            transform: scale(1.2);
         }
 
         .old-logo-container {
@@ -650,12 +697,17 @@
         </div>
 
         <div class="logo-section" data-aos="fade-up" data-aos-delay="300">
-            <h3 class="logo-section-title">原始標誌</h3>
+            <h3 class="logo-section-title">Logo</h3>
             <div class="old-logo-container">
                 <img src="images/logo.jpg" alt="OutskirtsMafia Original Logo" class="old-logo" data-aos="zoom-in" data-aos-delay="400">
             </div>
         </div>
     </section>
+
+    <div class="lightbox" id="lightbox">
+        <span class="lightbox-close" id="lightbox-close">&times;</span>
+        <img src="" alt="放大圖片" class="lightbox-content" id="lightbox-img">
+    </div>
 
     <footer>
         <p>&copy; 2026 OutskirtsMafia. NK all the way up💦</p>
@@ -687,6 +739,38 @@
                     });
                 }
             });
+        });
+
+        // Lightbox functionality
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+        const lightboxClose = document.getElementById('lightbox-close');
+        const aboutImages = document.querySelectorAll('.about-img');
+
+        aboutImages.forEach(img => {
+            img.addEventListener('click', function() {
+                lightbox.classList.add('active');
+                lightboxImg.src = this.src;
+                document.body.style.overflow = 'hidden';
+            });
+        });
+
+        function closeLightbox() {
+            lightbox.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        lightboxClose.addEventListener('click', closeLightbox);
+        lightbox.addEventListener('click', function(e) {
+            if (e.target === lightbox) {
+                closeLightbox();
+            }
+        });
+
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeLightbox();
+            }
         });
     </script>
 </body>
